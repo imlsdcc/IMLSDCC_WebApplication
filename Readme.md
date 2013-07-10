@@ -1,0 +1,1 @@
+﻿This repository contains the web application for the IMLS Digital Collections & Content aggregation. This application is built as a MS Visual Studio project using vb.net, jquery, json, and javascript.
