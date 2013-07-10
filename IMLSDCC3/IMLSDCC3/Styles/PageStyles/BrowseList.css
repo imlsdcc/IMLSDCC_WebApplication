@@ -1,0 +1,53 @@
+﻿
+/*CSS specific to this page*/
+.tabbedPannel
+{
+    border-bottom: 1px solid #5985A8;    
+}
+#center-panel-cushion 
+{
+    border-right:none;
+    margin-right: 0;
+}
+        
+#right-panel
+{
+    width: 0;
+}
+#center-panel-cushion h2
+{
+    border:none;
+}
+.spinner
+{
+    margin: 0px auto 0px 300px;
+}
+/*Style for Browse By Year*/
+.year-cell{
+	font: 9pt sans-serif;
+	width:50px;
+	text-align: center;
+	padding: 5px;
+	border: 1px solid;
+	font-weight: bold;
+}
+#browse-by-date 
+{
+    margin: 15px 0px 15px 120px;
+}
+.pager li a
+{
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+}
+.rbutton 
+{
+    list-style-type:none; 
+    display:inline-block;
+}
+.rbutton a
+{
+    
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+}

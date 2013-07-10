@@ -1,0 +1,24 @@
+﻿
+/*CSS specific to this page*/
+.tabbedPannel
+{
+    border-bottom: 1px solid #5985A8;    
+}
+#center-panel-cushion 
+{
+    border-right:none;
+    margin-right: 0;
+}
+        
+#right-panel
+{
+    width: 0;
+}
+#center-panel-cushion h2
+{
+    border:none;
+}
+.item-match a {
+    color: #0D8AA6;
+    text-decoration: none;
+}

@@ -1,0 +1,128 @@
+﻿<%@ Master Language="VB" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%-- The following line works around an ASP.NET compiler warning --%>
+<%: ""%>
+
+<!DOCTYPE html>
+<html>
+    <head runat="server">
+        <title>
+            <asp:ContentPlaceHolder ID="Title" runat="server" />
+        </title>
+
+        <%-- Logo --%>
+        <link rel="Shortcut Icon" href="<%: Url.Content("~/Images/favicon.ico") %>">
+
+        <%-- CSS Style Sheets --%>
+        <link href="<%: Url.Content("~/Styles/jquery-ui-1.8.22.custom.css")%>" rel="stylesheet" type="text/css" />
+        <link href="<%: Url.Content("~/Styles/global.css") %>" rel="stylesheet" type="text/css" />
+
+        <%-- Jquery and Jquery-UI scripts --%>
+        <script type="text/javascript" src="<%: Url.Content("~/Scripts/Jquery/jquery-1.7.1.min.js") %>"></script>
+        <script type="text/javascript" src="<%: Url.Content("~/Scripts/Jquery-UI/jquery-ui-1.8.22.custom.min.js") %>" ></script>
+        <script type="text/javascript" src="<%: Url.Content("~/Scripts/Jquery/jquery.ba-bbq.min.js") %>"></script>
+
+        <%-- Project scripts --%>
+        <script type="text/javascript" src="<%: Url.Content("~/Scripts/D3/d3.v2.min.js") %>"></script>
+        <script type="text/javascript" src="<%: Url.Content("~/Scripts/Code/carousel.js") %>"></script>
+        <script type="text/javascript" src="<%: Url.Content("~/Scripts/Code/search_results.js") %>"></script>
+
+        <%-- Any Static CSS for that page only --%>
+        <asp:ContentPlaceHolder ID="StaticPageCss" runat="server" />
+        
+    </head>
+    <body>
+            <%-- Main Container for everything on Page --%>
+            <div id="container">
+                <%-- Hardcoded Banner to include in every page --%>
+                <div id="banner">
+                    <a href="/">
+                             <span id="banner-font-1">IMLS DCC</span>
+                    </a>
+                    <div id="search-panel" class="panel">
+                            <% Using Html.BeginForm("ResultList/Items/1", "Search", FormMethod.Get)%>
+                                <input type="submit" id="search_button" height="35px" width="37px" />
+                                <input type="text" name="anywhere" class="ph" />
+                                <div class="hiden">
+                                    <input type="hidden" name="iStartRecord" value="1" />
+                                    <input type="hidden" name="iMaximumRecords" value="10" />
+                                    <input type="hidden" name="cStartRecord" value="1" />
+                                    <input type="hidden" name="cMaximumRecords" value="10" />
+                                    <input type="hidden" name="sort" value="relevant" />
+                                </div>
+                            <% End Using%>
+
+                            <%--<img id="search_button" src="<%: Url.Content("~/Images/search-blue.png") %>" />
+                            <textarea id="ph" class="ph"></textarea>--%>
+                             <%-- <form id="form1" action="page2" runat="server">
+                              <asp:ImageButton ID="search_button" ClientIDMode="Static" runat="server" PostBackUrl="/ResultList" ImageUrl="~/Images/search-blue.png" />
+                              <asp:TextBox ID="ph" ClientIDMode="Static" CssClass="ph" runat="server"></asp:TextBox></form>--%>
+                    </div>
+
+                    <div id="browse-panel" class="panel">
+                        <h2>Browse by</h2>
+                        <ul>
+                            <li><a class="browseHref" href="/BrowseList/Title/a/1/30">Title</a></li>
+                            <li><a class="browseHref" href="/BrowseList/Subject/a/1/30">Subject</a></li>
+                            <li><a class="browseHref" href="/BrowseList/Type/a/1/30">Type</a></li>
+                            <li><a class="browseHref" href="/BrowseList/Date/circa/1/30">Date</a></li>
+                        </ul>
+                        <ul>
+                            <li><a class="browseHref" href="/BrowseList/Institutions/a/1/30">Institutions</a></li>
+                            <li><a class="browseHref" href="/BrowseList/Collections/a/1/30">Collections</a></li>
+      
+                        </ul>
+                    
+                    </div>
+                </div>
+
+                <%-- Black Bar Just Under Banner --%>
+                <div class="middle-bar">
+                    <asp:ContentPlaceHolder ID="middlebar" runat="server" />
+                </div>
+
+                <%-- Main Conent in between the Banner and Footer --%>
+                <div id="content">
+                    <div id="center-panel">
+                        <div id="center-panel-cushion">
+                            <asp:ContentPlaceHolder ID="centerPanel" runat="server" />
+                        </div>
+                    </div>
+                    <div id="left-panel">
+                        <asp:ContentPlaceHolder ID="leftPanel" runat="server" />
+                    </div>
+                    <div id="right-panel">
+                        <asp:ContentPlaceHolder ID="rightPanel" runat="server" />
+                    </div>
+                </div>
+
+                <%-- Hardcoded Footer to include in every page --%>
+                <div id="footer">
+                    <div id="Div1">
+                        <ul>
+			                <li><a href="/">Home</a></li>
+			                <li><a href="/About">About IMLS DCC</a></li>
+			                <li><a href="/Participation">How to Participate</a></li>
+			                <li><a href="/Groups">Research Areas</a></li>
+			                <li><a href="/Contact">Contact Us</a></li>
+			                <li><a href="/Privacy">Privacy Policy</a></li>
+                            <li><a href="/Terms#usage">Usage Policy</a></li>
+	                    </ul>
+                        <p>
+                            <a href="/Terms#copyright" id="copyright-notice">&copy; University of Illinois Board of Trustees, under an NCSA open source license.</a>
+                        </p>
+                        <p> 
+                            &nbsp; Hosted by <a href="http://web.library.uiuc.edu/grainger/" target="_blank">Grainger Engineering Library</a>
+                        </p>
+                        <div id="footer-logos">
+                            <ul>
+                                <li><a href="http://illinois.edu/"><img src="<%: Url.Content("~/Images/imark_bw.png") %>" /></a></li>
+                                <li><a href="http://cirss.lis.illinois.edu/"><img src="<%: Url.Content("~/Images/cirss-bw-inverse.png") %>" style="margin-bottom: 7px;" /></a></li>
+                                <li><a href="http://www.imls.gov/"><img src="<%: Url.Content("~/Images/IMLS_Logo_White-[Converted].png") %>" /></a></li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            
+    </body>
+</html>

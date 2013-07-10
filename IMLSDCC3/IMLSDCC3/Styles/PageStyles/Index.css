@@ -1,0 +1,75 @@
+﻿/*CSS specific to this page*/
+        #center-panel-cushion 
+        {
+            border-left:none;
+            border-right:none;
+            margin: 0 205px 0 295px;
+        }
+        
+        #right-panel
+        {
+            width: 175px;
+        }
+        #left-panel
+        {
+            width: 265px;
+        }
+        
+        /*Style for Browse By Year*/
+        .year-cell{
+	        font: 9pt sans-serif;
+	        width:50px;
+	        text-align: center;
+	        padding: 5px;
+	        border: 1px solid;
+	        font-weight: bold;
+        }
+        #browse-by-date 
+        {
+            margin: 15px 0px 15px 0px;
+        }
+
+        /* Style for D3 Map */
+        #visualization {
+          width: 470px;
+          height: 280px;
+          background: #fff;
+          margin: -11px 0 -13px 0;
+        }
+
+        .black path {
+          fill: none;
+          stroke:  none;
+          stroke-width: 0px;
+        }
+
+        .white path {
+          fill: #fff;
+          stroke: none;
+        }
+
+        .grey path {
+          fill: #ccc;
+          stroke: none;
+        } 
+        .type_container {
+float:left;
+width: 140px;
+margin: 3px;
+padding: 3px;
+border: 1px dashed #91D2D9;
+}
+.type_thumb {
+width:50px;
+height:50px;
+background-size: 150%;
+float:left;
+}
+.type_label {
+width:90px;
+padding-top:16px;
+font-family: Helvetica, Arial, sans-serif;
+text-align: center;
+float:left;
+font-size:12px;
+}
